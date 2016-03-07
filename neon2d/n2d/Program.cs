@@ -39,7 +39,7 @@ namespace n2d
 
             string imagepath = Environment.CurrentDirectory + @"\demoimage.png"; //this is /bin/Debug/ btw
             Prop demoimage = new Prop(new Bitmap(imagepath), 10, imagey, 150, 150);
-            myscene.renderProp(demoimage);
+            myscene.render(demoimage);
 
             Rect rect1 = new Rect(0, 0, 60, 60);
             Rect rect2 = new Rect(10, 10, 40, 40);
@@ -55,16 +55,16 @@ namespace n2d
             Shape.Ellipse ell = new Shape.Ellipse(50, 50, 30, 50);
             Shape.Line li = new Shape.Line(600, 400, 650, 350);
 
-            myscene.renderTriangle(tri, 2, Brushes.Blue);
-            myscene.renderRectangle(rect, 1, Brushes.Green);
-            myscene.renderEllipse(ell, 3, Brushes.Red);
-            myscene.renderLine(li, 4, Brushes.Yellow);
+            myscene.render(tri, 2, Brushes.Blue);
+            myscene.render(rect, 1, Brushes.Green);
+            myscene.render(ell, 3, Brushes.Red);
+            myscene.render(li, 4, Brushes.Yellow);
 
             int mx = myscene.getMouseX();
             int my = myscene.getMouseY();
 
-            myscene.renderText(new Text(mx.ToString(), 0, 0, Brushes.White));
-            myscene.renderText(new Text(my.ToString(), 0, 15, Brushes.White));
+            myscene.render(new Text(mx.ToString(), 0, 0, Brushes.White));
+            myscene.render(new Text(my.ToString(), 0, 15, Brushes.White));
 
         }
 
