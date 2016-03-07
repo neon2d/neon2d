@@ -15,7 +15,11 @@ namespace neon2d.Math
         public int X
         {
             get { return _x; }
+<<<<<<< HEAD
             set { _x = value;  }
+=======
+            set { _x = value; }
+>>>>>>> origin/new-renderer-#9
         }
 
         public int Y
@@ -23,7 +27,10 @@ namespace neon2d.Math
             get { return _y; }
             set { _y = value; }
         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/new-renderer-#9
     }
 
     public struct Rectangle
@@ -57,5 +64,9 @@ namespace neon2d.Math
             set { _h = value; }
         }
     }
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> origin/new-renderer-#9
 }
