@@ -99,19 +99,19 @@ namespace neon2d
             downkey = e.KeyCode;
         }
 
-        public void renderSprite(Sprite render)
+        public void render(Sprite render)
         {
             spritelist[spritect] = render;
             spritect++;
         }
 
-        public void renderProp(Prop render)
+        public void render(Prop render)
         {
             proplist[propct] = render;
             propct++;
         }
 
-        public void renderText(Text stringtext)
+        public void render(Text stringtext)
         {
             textlist[textct] = stringtext;
             textct++;
@@ -176,7 +176,7 @@ namespace neon2d
 
         //THE ACTUAL SHAPE RENDERING IS HERE
         
-        public void renderLine(Shape.Line line, int thickness = 1, Brush color = null)
+        public void render(Shape.Line line, int thickness = 1, Brush color = null)
         {
             Pen pcolor;
             if(color == null)
@@ -192,7 +192,7 @@ namespace neon2d
             linect++;
         }
 
-        public void renderRectangle(Shape.Rectangle rect, int thickness = 1, Brush color = null)
+        public void render(Shape.Rectangle rect, int thickness = 1, Brush color = null)
         {
             Pen pcolor;
             if (color == null)
@@ -208,7 +208,7 @@ namespace neon2d
             rectct++;
         }
 
-        public void renderEllipse(Shape.Ellipse ellipse, int thickness = 1, Brush color = null)
+        public void render(Shape.Ellipse ellipse, int thickness = 1, Brush color = null)
         {
             Pen pcolor;
             if (color == null)
@@ -224,7 +224,7 @@ namespace neon2d
             ellipsct++;
         }
 
-        public void renderTriangle(Shape.Triangle triangle, int thickness = 1, Brush color = null)
+        public void render(Shape.Triangle triangle, int thickness = 1, Brush color = null)
         {
             Pen pcolor;
             if (color == null)
