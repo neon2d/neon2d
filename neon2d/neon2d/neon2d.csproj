@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Game.cs" />
+    <Compile Include="Math.cs" />
     <Compile Include="Message.cs" />
     <Compile Include="Networking.cs" />
     <Compile Include="Physics.cs" />
