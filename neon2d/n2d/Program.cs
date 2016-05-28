@@ -90,14 +90,14 @@ namespace n2d
                 //Console.WriteLine("intersecting!");
             }
 
-            Shape.Triangle tri = new Shape.Triangle(100, 100, 50, 50);
-            Shape.Rectangle rect = new Shape.Rectangle(300, 300, 45, 80);
-            Shape.Ellipse ell = new Shape.Ellipse(50, 50, 30, 50);
+            Shape.Triangle tri = new Shape.Triangle(50, 50);
+            Shape.Rectangle rect = new Shape.Rectangle(45, 80, true); //all shapes except triangle can be filled
+            Shape.Ellipse ell = new Shape.Ellipse(30, 50);
             Shape.Line li = new Shape.Line(600, 400, 650, 350);
 
-            scene.render(tri, 2, Brushes.Blue);
-            scene.render(rect, 1, Brushes.Green);
-            scene.render(ell, 3, Brushes.Red);
+            scene.render(tri, 100, 100, 2, Brushes.Blue);
+            scene.render(rect, 300, 300, 1, Brushes.Green);
+            scene.render(ell, 50, 50, 3, Brushes.Red);
             scene.render(li, 4, Brushes.Yellow);
 
             int mx = scene.getMouseX();

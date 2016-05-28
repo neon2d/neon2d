@@ -34,77 +34,89 @@ namespace neon2d
 
         }
 
+        /// <summary>
+        /// A rectangular 2D shape
+        /// </summary>
         public class Rectangle
         {
 
-            public int rectX = 0;
-            public int rectY = 0;
             public int rectWidth = 0;
             public int rectHeight = 0;
+            public bool filled = false;
 
-            public Rectangle(int x, int y, int width, int height)
+            /// <param name="width">The width of the Rectangle</param>
+            /// <param name="height">The height of the Rectangle</param>
+            /// <param name="filled">Determines if the Rectangle is filled-in or not</param>
+            public Rectangle(int width, int height, bool filled = false)
             {
-                rectX = x;
-                rectY = y;
                 rectWidth = width;
                 rectHeight = height;
+                this.filled = filled;
             }
-            public Rectangle(Physics.Rect dimensions)
+
+            /// <param name="dimensions">A Vector2 representing the width and height of the Rectangle</param>
+            /// <param name="filled">Determines if the Rectangle is filled-in or not</param>
+            public Rectangle(Math.Vector2i dimensions, bool filled = false)
             {
-                rectX = (int)dimensions.x;
-                rectY = (int)dimensions.y;
-                rectWidth = (int)dimensions.width;
-                rectHeight = (int)dimensions.height;
+                rectWidth = (int)dimensions.x;
+                rectHeight = (int)dimensions.y;
+                this.filled = filled;
             }
         
         }
 
+        /// <summary>
+        /// A circular 2D shape
+        /// </summary>
         public class Ellipse
         {
-
-            public int ellipsX = 0;
-            public int ellipsY = 0;
             public int ellipsWidth = 0;
             public int ellipsHeight = 0;
-
-            public Ellipse(int x, int y, int width, int height)
+            public bool filled;
+            
+            /// <param name="width">The width of the Ellipse</param>
+            /// <param name="height">The height of the Ellipse</param>
+            /// <param name="filled">Determines if the Ellipse is filled-in or not</param>
+            public Ellipse(int width, int height, bool filled = false)
             {
-                ellipsX = x;
-                ellipsY = y;
                 ellipsWidth = width;
                 ellipsHeight = height;
+                this.filled = filled;
             }
-            public Ellipse(Physics.Rect dimensions)
+            
+            /// <param name="dimensions">A Vector2 representing the width and height of the Ellipse</param>
+            /// <param name="filled">Determines if the Ellipse is filled-in or not</param>
+            public Ellipse(Math.Vector2i dimensions, bool filled = false)
             {
-                ellipsX = (int)dimensions.x;
-                ellipsY = (int)dimensions.y;
-                ellipsWidth = (int)dimensions.width;
-                ellipsHeight = (int)dimensions.height;
+                ellipsWidth = (int)dimensions.x;
+                ellipsHeight = (int)dimensions.y;
+                this.filled = filled;
             }
 
         }
 
+        /// <summary>
+        /// A triangular 2D shape
+        /// </summary>
         public class Triangle
         {
-
-            public int triX = 0;
-            public int triY = 0;
+            
             public int triWidth = 0;
             public int triHeight = 0;
 
-            public Triangle(int x, int y, int width, int height)
+            /// <param name="width">The width of the Triangle's base</param>
+            /// <param name="height">The height of the Triangle's peak</param>
+            public Triangle(int width, int height)
             {
-                triX = x;
-                triY = y;
                 triWidth = width;
                 triHeight = height;
             }
-            public Triangle(Physics.Rect dimensions)
+            
+            /// <param name="dimensions">A Vector2 representing the width of the Triangle's base and the height of the Triangle's peak</param>
+            public Triangle(Math.Vector2i dimensions)
             {
-                triX = (int)dimensions.x;
-                triY = (int)dimensions.y;
-                triWidth = (int)dimensions.width;
-                triHeight = (int)dimensions.height;
+                triWidth = (int)dimensions.x;
+                triHeight = (int)dimensions.y;
             }
 
         }

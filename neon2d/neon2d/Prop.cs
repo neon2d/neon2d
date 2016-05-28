@@ -14,6 +14,9 @@ namespace neon2d
         public int propWidth;
         public int propHeight;
 
+        /// <param name="image">The Bitmap image displayed</param>
+        /// <param name="width">The width of this Prop</param>
+        /// <param name="height">The height of this Prop</param>
         public Prop(Bitmap image, int width, int height)
         {
             propSource = image;
@@ -21,6 +24,7 @@ namespace neon2d
             propHeight = height;
         }
 
+        /// <param name="image">The Bitmap image displayed at original scale</param>
         public Prop(Bitmap image)
         {
             propSource = image;
