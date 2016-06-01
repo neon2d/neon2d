@@ -58,8 +58,8 @@ namespace neon2d
             /// <param name="filled">Determines if the Rectangle is filled-in or not</param>
             public Rectangle(Math.Vector2i dimensions, bool filled = false)
             {
-                rectWidth = (int)dimensions.x;
-                rectHeight = (int)dimensions.y;
+                rectWidth = dimensions.x;
+                rectHeight = dimensions.y;
                 this.filled = filled;
             }
         
@@ -88,8 +88,8 @@ namespace neon2d
             /// <param name="filled">Determines if the Ellipse is filled-in or not</param>
             public Ellipse(Math.Vector2i dimensions, bool filled = false)
             {
-                ellipsWidth = (int)dimensions.x;
-                ellipsHeight = (int)dimensions.y;
+                ellipsWidth = dimensions.x;
+                ellipsHeight = dimensions.y;
                 this.filled = filled;
             }
 
@@ -103,20 +103,22 @@ namespace neon2d
             
             public int triWidth = 0;
             public int triHeight = 0;
+            public bool filled;
 
             /// <param name="width">The width of the Triangle's base</param>
             /// <param name="height">The height of the Triangle's peak</param>
-            public Triangle(int width, int height)
+            public Triangle(int width, int height, bool filled = false)
             {
                 triWidth = width;
                 triHeight = height;
+                this.filled = filled;
             }
             
             /// <param name="dimensions">A Vector2 representing the width of the Triangle's base and the height of the Triangle's peak</param>
             public Triangle(Math.Vector2i dimensions)
             {
-                triWidth = (int)dimensions.x;
-                triHeight = (int)dimensions.y;
+                triWidth = dimensions.x;
+                triHeight = dimensions.y;
             }
 
         }
