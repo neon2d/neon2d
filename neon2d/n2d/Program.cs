@@ -54,19 +54,8 @@ namespace n2d
                 particles.addParticle(particleProp);
             }
 
-            Colour magneta = new Colour(0, 255, 255, 255);
-
-            Colour transparentWhite = new Colour(0x00FFFFFF);
-
-            Colour argbTest = new Colour(255, 255, 255, 255);
-
-            Console.WriteLine(magneta);
-
-            Brush brush = magneta.toSysBrush();
-
-            Color systemDrawingColor = magneta.toSysColor();
-
-            Colour neonColourTest = systemDrawingColor.toNeonColour();
+            Colour test = new Colour("FF00FF00");
+            Console.WriteLine(test);
         }
 
         public override void onUpdate()
@@ -90,8 +79,8 @@ namespace n2d
                 //Console.WriteLine("intersecting!");
             }
 
-            Shape.Triangle tri = new Shape.Triangle(50, 50);
-            Shape.Rectangle rect = new Shape.Rectangle(45, 80, true); //all shapes except triangle can be filled
+            Shape.Triangle tri = new Shape.Triangle(50, 50, false);
+            Shape.Rectangle rect = new Shape.Rectangle(45, 80, true);
             Shape.Ellipse ell = new Shape.Ellipse(30, 50);
             Shape.Line li = new Shape.Line(600, 400, 650, 350);
 

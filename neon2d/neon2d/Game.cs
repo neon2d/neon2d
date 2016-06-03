@@ -128,10 +128,19 @@ namespace neon2d
                 {
                     //its a triangle
                     Scene.TriStruct placeholder = (Scene.TriStruct)scene.renderlist[i];
-
-                    g.DrawLine(placeholder.p, new Point(placeholder.x, placeholder.y + placeholder.tri.triHeight), new Point(placeholder.x + (int)(placeholder.tri.triWidth / 2), placeholder.y));
-                    g.DrawLine(placeholder.p, new Point(placeholder.x + (int)(placeholder.tri.triWidth / 2), placeholder.y), new Point(placeholder.x + placeholder.tri.triWidth, placeholder.y + placeholder.tri.triHeight));
-                    g.DrawLine(placeholder.p, new Point(placeholder.x, placeholder.y + placeholder.tri.triHeight), new Point(placeholder.x + placeholder.tri.triWidth, placeholder.y + placeholder.tri.triHeight));
+                    Point [] points = {
+                         new Point(placeholder.x + (int)(placeholder.tri.triWidth / 2), placeholder.y),
+                         new Point(placeholder.x + placeholder.tri.triWidth, placeholder.y + placeholder.tri.triHeight),
+                         new Point(placeholder.x, placeholder.y + placeholder.tri.triHeight)
+                    };
+                    if(!placeholder.tri.filled)
+                    {
+                        g.DrawPolygon(placeholder.p, points);
+                    }
+                    else
+                    {
+                        g.FillPolygon(placeholder.p.Brush, points);
+                    }
                 }
                 else if (scene.renderlist[i].GetType() == typeof(Scene.ParticleRenderStruct))
                 {
